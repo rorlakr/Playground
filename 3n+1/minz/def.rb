@@ -1,5 +1,3 @@
-require 'benchmark'
-
 @count = 1
 @arr = [] 
 
@@ -34,6 +32,7 @@ def start(i,j)
 	puts @arr.max
 end
 
-Benchmark.measure{
-	start(1,100)
-}
+require 'benchmark'
+Benchmark.bmbm(50) do | x |
+	x.report("Max size of Cycle-lenth for 1~ 100 : #{start(1,100)} => ") {start(1,100)}
+end
