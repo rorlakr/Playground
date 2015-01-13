@@ -22,7 +22,9 @@ module PoterStemming
         [/izer$/, 'ize', "m>0"],
         [/abli$/, 'able', "m>0"],
         [/(al|ent|e|ous)li$/, '\1', "m>0"],
-        # ...
+        [/((?<=iz)ation|(?<=at)ion|(?<=at)or)$/, 'e', "m>0"],
+        [/((?<=al)ism|(?<=ive)ness|(?<=ful)nes|(?<=ous)ness|(?<=al)iti)$/, '', "m>0"],
+        [/biliti$/, 'ble', "m>0"],
       ],
       three: [
         [/((?<=ic)ate|ative|(?<=al)ize|(?<=ic)iti|(?<=ic)al|ful|ness)$/, '', "m>0"],
