@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ruby Playground
 
 ## Porter Stemming Algorithm
@@ -81,4 +80,3 @@ $ bundle exec guard
 11:06:49 - INFO - Guard is now watching at '/Users/toto/Dropbox/programmings/github/nacyot/my_awesome_ruby_project'
 [1] guard(main)>
 ```
->>>>>>> cf4698d03216a015343f7dd1ce649b1ca0141c5e

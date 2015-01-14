@@ -125,25 +125,12 @@ class PorterStemming
     measure > 0
   end
 
-  def vowels
-    stem.scan(/[aeiou]/)
-  end
-
   def v?
-    vowels.size > 0
-  end
-
-  def cvc
-    stem.scan(/[^aeiou][aeiou][^aeiouwxy]$/)
-  end
-
-  def not_cvc
-    stem.scan(/[aeiou][aeiou][^aeiouwxy]$/)
+    stem.scan(/[aeiou]/).size > 0
   end
 
   def o?
     stem =~ /[^aeiou][aeiou][^aeiouwxy]$/
-    # cvc.size > 0
   end
 
   def not_o?
