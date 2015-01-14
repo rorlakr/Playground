@@ -1,4 +1,4 @@
-# 포터 스테밍 알고리즘(Poter Stemming Algorithm)
+# 포터 스테밍 알고리즘(Porter Stemming Algorithm)
 =========
 
 포터 스테밍 알고리즘은 검색 엔진에서 사용되며, 단어의 접미사를 제거하거나 다른 단어로 대치하는 역할을 합니다. 가령 예를 들자면
