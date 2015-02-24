@@ -25,10 +25,10 @@ A    22           5564     2E2.13.107
 A    X            6368     2E5.199
 </pre>
 
-Playground/amicables/ 디렉토리 아래에 두 분의 아이디를 디렉토리 이름으로 새로 만드신 후 소스파일을 올려주세요.
-예) Playground/bowling/blackgun_wagurano/ 
+Playground/amicable/ 디렉토리 아래에 두 분의 아이디를 디렉토리 이름으로 새로 만드신 후 소스파일을 올려주세요.
+예) Playground/amicable/blackgun_wagurano/ 
 
-박유지님의 테스트 코드 [TDD with Rspec Guide](https://github.com/parkeugene/playground)
+박유진님의 테스트 코드 [TDD with Rspec Guide](https://github.com/parkeugene/playground)
 =========
 ## 후기
 
@@ -55,5 +55,3 @@ Playground/amicables/ 디렉토리 아래에 두 분의 아이디를 디렉토�
    * 문제는 아직 해결 못하였다. 소수가 힌트라고 생각해서 소수를 구하는데 시간을 많이 보냈다.
    * require 'prime'
    * Gemfile 에 gem 'prime' 할 필요가 없는데 인스톨 안되는 줄 알고 소수를 구하는 메소드를 작성하다가 Prime.first(100000)하면 소수를 구할 수 있었다.
-
-
