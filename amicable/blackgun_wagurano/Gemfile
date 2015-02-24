@@ -1,0 +1,4 @@
+gem "rspec"
+gem "guard"
+gem "guard-rspec"
+# gem 'prime-numbers', '~> 0.0.1'
