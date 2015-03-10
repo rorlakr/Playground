@@ -38,6 +38,14 @@ class Array
     end
     result.join("\n")
   end
+
+  def dup_map_with_index(&block)
+    self.map.with_index do |inner, idx1|
+      inner.map.with_index do |ii, idx2|
+        block.call(idx1,idx2,ii)
+      end
+    end
+  end
 end
 
 class MineSweeper
@@ -63,14 +71,10 @@ class MineSweeper
 
   private
   def generate
-    @map = Array.new(@n) { Array.new(@m) { NONE_MINE_MARK } }
-    @map.dup_each_with_index do |n,m,data|
-      @map[n][m] = MINE_MARK if rand(10) < 2
-    end
+    @map = Array.new(@n) { Array.new(@m) { rand(10) < 2 ? MINE_MARK : NONE_MINE_MARK } }
 
-    @hint_map = Array.new(@n) { Array.new(@m) { 0 } }
-    @map.dup_each_with_index do |n,m,data|
-      @hint_map[n][m] = MINE_MARK if @map[n][m] == MINE_MARK
+    @hint_map = @map.dup_map_with_index do |n,m,data|
+      @map[n][m] == MINE_MARK ? MINE_MARK : 0
     end
   end
 
@@ -89,12 +93,12 @@ class MineSweeper
       next if tn < 0 || tn >= @n
       next if tm < 0 || tm >= @m
       next if @hint_map[tn][tm] == MINE_MARK
-      @hint_map[tn][tm] += 1 unless tn == n and tm == m
+      @hint_map[tn][tm] += 1 unless tn == n && tm == m
     end
   end
 end
 
 ms = MineSweeper.new(ARGV[0].to_i,ARGV[1].to_i)
 ms.show_map
-puts 
+puts
 ms.show_hint
