@@ -14,7 +14,7 @@ class Fibo
   	c=0
   	begin
   		c=bb+b
-  		if(c < @limit && c%2 == 0)
+  		if(c < @limit && c.even?)
   			@array << c
   			sum+=c
   		end
