@@ -12,19 +12,23 @@ module Memoization
 end
 
 class EvenFibo
-
   extend Memoization
 
-  memoize def self.fibo(n)
-    n <= 1 ? n :  fibo( n - 1 ) + fibo( n - 2 )
+  memoize def fibo(n)
+    n <= 2 ? n : fibo( n - 1 ) + fibo( n - 2 ) 
   end
 
-  def sum(n)
+  def even_sum(n)
     sum = 0
     (1..n).each { |index|
       sum += fibo(index) if fibo(index).even?
     }
     sum
   end
-
+  
+  def sum(n)
+    puts "dprecated sum method"
+    self.even_sum n
+  end
 end
+
