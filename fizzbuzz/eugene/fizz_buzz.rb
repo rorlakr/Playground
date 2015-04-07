@@ -3,7 +3,7 @@ class FizzBuzz
 
   def initialize(limit = 0)
     @limit = limit
-    @output = (1..@limit).map { |k,v| v = k }
+    @output = (1..@limit)
   end
 
   def fizz
@@ -19,4 +19,4 @@ class FizzBuzz
 end
 
 fz = FizzBuzz.new 1_000
-fz.fizz_buzz().each { |e| puts e}
+fz.fizz_buzz().each { |e| puts e }
