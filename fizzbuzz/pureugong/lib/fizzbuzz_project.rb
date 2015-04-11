@@ -1,5 +1,4 @@
-class FizzbuzzProject
+module FizzbuzzProject
 		
 end
-
-require "./lib/fizzbuzz_project/fizzbuzz"
+require "fizzbuzz_project/fizzbuzz"
