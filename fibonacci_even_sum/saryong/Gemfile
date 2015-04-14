@@ -1,0 +1,5 @@
+source "http://rubygems.org"
+
+gem "guard"
+gem "guard-minitest"
+gem "ruby_gntp" if RUBY_PLATFORM = "darwin"
