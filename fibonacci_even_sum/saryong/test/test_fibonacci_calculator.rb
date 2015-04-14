@@ -7,11 +7,11 @@ class TestFibonacciCalculator < Minitest::Test
   SAMPLE_SIZE = FIBONACCI_SAMPLE.size
 
   def test_number
-  	FIBONACCI_SAMPLE.each.with_index(1) { |n, i| assert_equal n, FibonacciCalculator.number(i) }
+    FIBONACCI_SAMPLE.each.with_index(1) { |n, i| assert_equal n, FibonacciCalculator.number(i) }
   end
 
   def test_series
-  	assert_equal FIBONACCI_SAMPLE, FibonacciCalculator.series(SAMPLE_SIZE)
+    assert_equal FIBONACCI_SAMPLE, FibonacciCalculator.series(SAMPLE_SIZE)
   end
 
   def test_series_less_than

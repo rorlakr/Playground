@@ -14,7 +14,7 @@ module FibonacciCalculator
   end
 
   def even_sum(max_number)
-  	series_less_than(max_number).select(&:even?).reduce(:+) || 0
+    series_less_than(max_number).select(&:even?).reduce(:+) || 0
   end
 
   def natural_numbers
