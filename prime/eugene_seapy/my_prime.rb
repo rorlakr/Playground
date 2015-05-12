@@ -22,10 +22,9 @@ class MyPrime
     max_prime
   end
 
-  def max_division3(num , i = 1)
-     i += 1
-    return i if num == 1 or num == i
-    num % i == 0 ? max_division3( num / i ) : max_division3( num ,  i )
+  def max_division3(num , i = 2)
+    return i if num == 1 || num == i
+    num % i == 0 ? max_division3( num / i, i ) : max_division3( num ,  i + 1 )
   end
 
 end
