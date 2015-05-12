@@ -20,14 +20,14 @@ the_number = 600_851_475_143
 
 # monkeypatching
 class Fixnum
-  def prime?
+  def prime? # almost O(n)
     (2..(self - 1)).each do |divisor|
       return false if self % divisor == 0
     end
     true
   end
 
-  def factors
+  def factors # also almost O(n)
     result = self
     divisors = []
     (1..self).each do |divisor|
@@ -40,10 +40,26 @@ class Fixnum
     divisors
   end
 
-  def prime_factors
+  def prime_factors # almost O(n^2)
     factors.select { |number| number.prime? }
   end
 end
 
 p the_number.prime_factors
 p the_number.prime_factors.last # => 6857
+
+# benchmarking
+BENCH_TIMES = 10
+
+Benchmark.bmbm do |bm|
+  bm.report('Prime') do
+    BENCH_TIMES.times do
+      Prime.prime_division(the_number).last.first
+    end
+  end
+  bm.report('prime_factors') do
+    BENCH_TIMES.times do
+      the_number.prime_factors.last
+    end
+  end
+end
