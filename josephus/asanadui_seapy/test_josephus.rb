@@ -15,5 +15,6 @@ class TestJosephus < Minitest::Test
     assert_equal 31, @jose.survivor(n: 41, k: 3)
     assert_equal 7, @jose.survivor(n: 66, k: 100)
     assert_equal 609, @jose.survivor(n: 1000, k: 1000)
+    assert_equal 98669, @jose.survivor(n: 100000, k: 1000)
   end
 end
