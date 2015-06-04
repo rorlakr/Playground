@@ -1,4 +1,6 @@
 module Josephus
+  module_function
+
   def round(k)
     i = (@list.size > k ? @offset % @list.size : @offset)
     result = []
@@ -21,8 +23,6 @@ module Josephus
   def surviver
     @list.first
   end
-
-  module_function :round, :full, :surviver
 end
 
 Josephus.full(10,3)
