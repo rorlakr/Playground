@@ -1,8 +1,4 @@
 module Josephus
-  class << self
-    attr_accessor :list, :offset
-  end
-
   def round(k)
     i = (@list.size > k ? @offset % @list.size : @offset)
     result = []
