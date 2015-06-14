@@ -86,6 +86,13 @@ class StringPointer < Pointer
     n = (strs.size ** 0.5).to_i
     @pointers = strs.each_with_index.map { |str, i| StringPointer.new(i, str, n) }
   end
+  
+  def self.generate_by_array(array)
+    @direction = :right
+    strs = array.flatten
+    n = (strs.size ** 0.5).to_i
+    @pointers = strs.each_with_index.map { |str, i| StringPointer.new(i, str, n) }
+  end
 end
 
 def snail2(s, e)
@@ -148,3 +155,17 @@ snail2("a", "y")
 
 # a.rb:2:in `<class:Pointer>': uninitialized constant Pointer::ClassMethods (NameError)
         # from a.rb:1:in `<main>'
+        
+def snail3(array)
+  return [] if array.flatten.empty?
+  sorted = []
+  current = StringPointer.generate_by_array(array).first
+  while current
+    sorted << current.i
+    current = current.next_pointer
+  end
+end
+
+snail3([[1,2,3],
+         [4,5,6],
+         [7,8,9]])
