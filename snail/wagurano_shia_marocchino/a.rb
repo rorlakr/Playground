@@ -17,13 +17,16 @@ class Pointer
   end
 
   def next_pointer
+    return nil if self.nil?
     self.visited = true
     pointer = move
       
     if pointer.nil? || pointer.visited
       self.class.turn
       pointer = move
-      pointer = nil if pointer.visited
+      if pointer.nil? || pointer.visited
+        pointer = nil
+      end
     end  
 
     pointer
@@ -62,7 +65,7 @@ class Pointer
 end
 
 
-def snail(n)
+def snail1(n)
   puts "n: #{n}"
   current = Pointer.generate(n).first
   while current
@@ -87,7 +90,7 @@ class StringPointer < Pointer
     @pointers = strs.each_with_index.map { |str, i| StringPointer.new(i, str, n) }
   end
   
-  def self.generate_by_array(array)
+  def self.generated_by_array(array)
     @direction = :right
     strs = array.flatten
     n = (strs.size ** 0.5).to_i
@@ -111,10 +114,10 @@ end
 #   [7,8,9]
 # ]
 
-[*1..10]
+# [*1..10]
 
-# snail(5)
-snail2("a", "y")
+# snail1(5)
+# snail2("a", "y")
 # a b c d e
 # f g h i j
 # k l m n o
@@ -156,16 +159,17 @@ snail2("a", "y")
 # a.rb:2:in `<class:Pointer>': uninitialized constant Pointer::ClassMethods (NameError)
         # from a.rb:1:in `<main>'
         
-def snail3(array)
+def snail(array)
   return [] if array.flatten.empty?
-  sorted = []
-  current = StringPointer.generate_by_array(array).first
+  sorted = [] 
+  current = StringPointer.generated_by_array(array).first
   while current
     sorted << current.i
     current = current.next_pointer
   end
+  sorted
 end
 
-snail3([[1,2,3],
-         [4,5,6],
-         [7,8,9]])
+# snail3([[1,2,3],
+#         [4,5,6],
+#         [7,8,9]])
