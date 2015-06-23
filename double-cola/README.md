@@ -19,3 +19,42 @@ whoIsNext(["철수", "민호", "수지", "효성", "지수"], 1)=="철수"
 whoIsNext(["철수", "민호", "수지", "효성", "지수"], 52)=="수지"
 whoIsNext(["철수", "민호", "수지", "효성", "지수"], 7230702951)=="민호"
 ```
+
+
+정답 
+
+["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"] 인 경우
+
+1 => "Sheldon"
+
+6 => "Sheldon"
+
+1802 => "Penny",
+
+2 => "Leonard"
+
+3 => "Penny"
+
+10 => "Penny"
+
+534 => "Rajesh"
+
+5033 => "Howard"
+
+10010 => "Howard"
+
+63 => "Rajesh"
+
+841 => "Leonard"
+
+3667 => "Penny"
+
+38614 => "Howard"
+
+1745 => "Leonard"
+
+1000000000 => "Penny"
+
+28643950 => "Leonard"
+
+
