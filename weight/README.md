@@ -38,8 +38,8 @@ a = "56 65 74 100 99 68 86 180 90"
     order_weight("387087 176 351832 100 430372 8 58052 54 175432 120 269974 147 309754 91 404858 67 271476 164 295747 111 40") == "100 111 120 40 8 54 91 164 147 67 176 430372 58052 175432 351832 271476 309754 404858 387087 295747 269974" 
 ````
 
-Playground/rect/ 디렉토리 아래에 두 분의 아이디를 디렉토리 이름으로 새로 만드신 후 소스파일을 올려주세요.
-예) Playground/rect/why_matz/ 
+Playground/weight/ 디렉토리 아래에 두 분의 아이디를 디렉토리 이름으로 새로 만드신 후 소스파일을 올려주세요.
+예) Playground/weight/why_matz/ 
 
 * 박유진님의 테스트 코드 [TDD with Rspec Guide](https://github.com/parkeugene/playground)
 * 마로치노님의 모범 사례 [Amicable](https://github.com/rorlakr/Playground/tree/master/amicable/marocchino)
