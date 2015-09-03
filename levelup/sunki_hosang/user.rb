@@ -1,56 +1,52 @@
 class User
   LEVELS = [-8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8]
 
-  attr_accessor :current_rank_index, :current_progress
+  attr_reader :progress
 
-  def initialize(options={})
-    if options[:starting_level]
-      @current_rank_index = LEVELS.index(options[:starting_level])
-    else
-      @current_rank_index = 0
-    end
-    @current_progress = 0
+  def initialize(starting_level: LEVELS[0])
+    @rank_index = LEVELS.index(starting_level)
+    @progress = 0
   end
 
   def rank
-    LEVELS[@current_rank_index]
-  end
-
-  def progress
-    @current_progress
+    LEVELS[rank_index]
   end
 
   def inc_progress(monster_rank)
-
-    if @current_rank_index >= LEVELS.size - 1
-      @current_pregress = 0
+    if rank_index >= LEVELS.size - 1
+      progress = 0
       return
     end
 
     diff = LEVELS.index(rank) - LEVELS.index(monster_rank)
+
     case diff
     when 0
-      @current_progress += 3
+      self.progress += 3
     when 1
-      @current_progress += 1
+      self.progress += 1
     when -(LEVELS.size - 1)..-1
-      @current_progress += (10 * diff * diff)
+      self.progress += (10 * diff * diff)
     end
 
     level_up
   end
 
+  private
+
+  attr_accessor :rank_index
+  attr_writer :progress
+
   def level_up
-    if @current_progress >= 100 && @current_rank_index < (LEVELS.size - 1)
-      @current_rank_index += (@current_progress / 100)
-      @current_progress %= 100
+    if progress >= 100 && rank_index < (LEVELS.size - 1)
+      self.rank_index += (progress / 100)
+      self.progress %= 100
 
       # Ranking overflow
-      if @current_rank_index >= LEVELS.size
-        @current_rank_index = LEVELS.size - 1
-        @current_progress = 0
+      if rank_index >= LEVELS.size
+        rank_index = LEVELS.size - 1
+        progress = 0
       end
     end
   end
 end
-
