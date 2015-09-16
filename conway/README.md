@@ -7,13 +7,13 @@
 한 세대가 지나면 각 세포들은 활동하거나 멈춘다. 한 세포 주변에 활동하는 세포수에 따라서 그 세포가 다음 세대에 활동할지 결정된다. 한 세포는 주변에 8개 세포가 있다. 
 
 바둑판(2차원 배열)이 아래와 같다면
-
+<pre>
 a b c d e
 f g h i j
 k l m n o
 p q r s t
-
-세포 j의 이웃은 d,e,a,i,f,n,o,k 다.
+</pre>
+세포 m의 이웃은 g,h,i,n,s,r,q,l 다.
 
 규칙은 [한글](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%ED%94%84_%EA%B2%8C%EC%9E%84)과 [영문](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)을 참고한다.
 
