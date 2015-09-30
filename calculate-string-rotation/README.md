@@ -18,3 +18,5 @@
     diff "Esham", "Esham" # => 0
     diff "dog", "god" # => -1
 ````
+
+출처: [Codewars](http://www.codewars.com/kata/calculate-string-rotation)
